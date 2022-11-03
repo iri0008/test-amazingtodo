@@ -1,19 +1,37 @@
 import './App.css';
-import {TextField} from "@mui/material";
+import { TextField } from "@mui/material";
+import { useState } from 'react';
+import React from 'react';
+import {Button, ListItemSecondaryAction} from "@mui/material";
+
+const myList = ["bade", "dusje"];
 
 function App() {
-  const myList = ["bade", "dusje"];
 
+  const [item, setItem] = useState(myList);
+
+  const addItem = () => {
+  var newItem = document.getElementById("outlined-basic").value;
+    setItem(newItem);
+    myList.push(newItem);
+    console.log(myList);
+  }
 
   return (
     <div className="App">
       <header className="App-header">  
+
         <div>
           <TextField id="outlined-basic" label="Add an item here.." variant="outlined" />
-          <button>Click me</button>
+          <Button onClick={addItem} variant="contained">Add item </Button>
         </div>
+
+        <p> Oppgave lagt til: {item} </p>
         
-        {myList.map((myList) => <li>{myList}</li>)}
+        {myList.map((item) => (
+          <li>{item}</li>
+        ))}
+
       </header>
     </div>
   );
