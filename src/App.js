@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import {TextField} from "@mui/material";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <button>Click me</button>
+        
+        <div>
+          <TextField id="outlined-basic" label="Add an item here.." variant="outlined" />
+          <button>Click me</button>
+        </div>
       </header>
     </div>
   );
